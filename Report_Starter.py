@@ -7,6 +7,8 @@ import json
 from time import sleep
 import datetime
 
+# Test
+
 # Run psexec, install-packages, and npm install from the test suite first
 # TODO: prompt user for the suites they want to run then pass that into __init__ to avoid complications
 
@@ -39,7 +41,6 @@ class Report_Runner:
             '7.25 - New Features']
 
         self.Scripts_To_Run = {'Collab': [], 'Train': []}
-
         Batch_Script_Path = f'{self.TEST_SUITE_PATH}\\Collab-BatchScript-{self.server}.ps1'
 
         # Get all the commands from the Collab BatchScript file and add to Scripts_To_Run
@@ -191,7 +192,8 @@ class Report_Runner:
 
 creds = ('brant.jolly@assima.net', 'Test!234')
 
-rr = Report_Runner('725')
+server = input('Server (ex.725): ')
+rr = Report_Runner(server)
 rr.create_folders()
 rr.Change_Credentials()
 rr.run_scripts()
